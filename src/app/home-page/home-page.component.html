@@ -1,5 +1,25 @@
 <!-- <div class="wrapper_search"> -->
-<form [formGroup]="form"  class="wrapper_search">
+
+    <div class="curent__weather">
+        <h2>current weather</h2>
+        <div
+            *ngIf="current.response"  
+            class="curent__block">
+           <div class="curent__title">
+                 <h3> Country : {{current.response.sys.country}}</h3>
+           </div>
+           <div class="curent_subtitle">
+               <h4>City : {{current.response.name}}</h4>
+           </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <form [formGroup]="form"  class="wrapper_search">
     <label for="find_location">Find Location</label>
     <input 
         formControlName="search"
@@ -15,10 +35,7 @@
         class="current__serach">
         <div class="search__wrapper">
             <h3 class="search__city">City : {{dataService.response.name}}</h3>
-          
-            <p class="search__country" id="contry">Country : {{dataService.response.sys.country}}</p>
-            
-            
+
         </div>
         
         <div class="search__temp">
@@ -26,7 +43,7 @@
         </div>
 
         <div class="search__wild">
-            {{dataService.response.clouds.all}}
+          <img src="{{imgUrl + dataService.response.weather[0].icon + '.png'}}" alt="">
         </div>
     </div>
 </form>

@@ -24,10 +24,12 @@ export class DataService {
     // }
 
     searchWeather(){
-      this.http.get(this.URL + this.city + '&units=metric' + '&APPID=' + this.APIkey).subscribe((response) => { 
+      this.http.get(this.URL + this.city + '&units=metric' + '&APPID=' + this.APIkey + '&lang=uk').subscribe((response) => { 
         this.response = response;
         console.log(response)});
         
     }
     
+
+   
 }
