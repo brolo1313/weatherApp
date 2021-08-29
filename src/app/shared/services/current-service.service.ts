@@ -41,8 +41,6 @@ export class CurrentServiceService  implements OnInit{
 
     // this.getCurrentLocation(this.latitude,this.longitude)
 
- 
-
   }
 
   getCurrentLocation() {
