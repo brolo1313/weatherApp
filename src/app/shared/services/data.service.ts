@@ -9,7 +9,7 @@ import { Injectable } from '@angular/core';
 export class DataService {
 
   APIkey = '2f1ebf1f3cb76063b686de9b127fe94e';
-  URL = 'http://api.openweathermap.org/data/2.5/weather?q=';  
+  URL = 'https://api.openweathermap.org/data/2.5/weather?q=';  
   public city: string | undefined;
   response: any;
 
@@ -24,7 +24,7 @@ export class DataService {
     // }
 
     searchWeather(){
-      this.http.get(this.URL + this.city + '&units=metric' + '&APPID=' + this.APIkey + '&lang=uk').subscribe((response) => { 
+      this.http.get(this.URL + this.city + '&units=metric' + '&APPID=' + this.APIkey + '&lang=uk' + '/').subscribe((response) => { 
         this.response = response;
         console.log(response)});
         
