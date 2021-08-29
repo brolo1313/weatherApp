@@ -49,8 +49,8 @@ export class CurrentServiceService  implements OnInit{
     this.http.get(this.URL + this.latitude + '&lon='+ this.longitude  + '&units=metric'+ '&APPID='  + this.APIkey +'&lang=ua')
     .subscribe((response) => { 
       this.response = response;
-      console.log(response)});
-     
+     });
+    //  console.log(response)
   }
   
 }

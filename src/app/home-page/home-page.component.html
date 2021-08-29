@@ -11,7 +11,7 @@
                         <h3> Country : {{current.response.sys.country}}</h3>
                 </div>
                 <div class="curent_subtitle">
-                    <h4>City : {{current.response.name}}</h4>
+                    <h4>loc : {{current.response.name}}</h4>
                 </div>
 
                 <div class="curent_info">
@@ -19,13 +19,15 @@
                     <p>lon : {{current.response.coord.lon}}</p>
                 </div>
 
-
-                
             </div>
 
 
             <!-- SECOND BLOCK -->
             <div class="curent__block">
+
+                <div class="search__wild">
+                    <img src="{{imgUrl + current.response.weather[0].icon + '.png'}}" alt="">
+                </div>
                 <div class="curent__title">
                         <h3>{{current.response.main.temp}}&#8451;</h3>
                 </div>
@@ -33,9 +35,7 @@
                     <h4> {{current.response.weather[0].description}}</h4>
                 </div>
 
-                <div class="search__wild">
-                    <img src="{{imgUrl + current.response.weather[0].icon + '.png'}}" alt="">
-                </div>
+                
                 
             </div>
 
@@ -57,21 +57,19 @@
 
 
 
-
-
-
     <form [formGroup]="form"  class="wrapper_search">
-    <label for="find_location">Find Location</label>
-    <input 
-        formControlName="search"
-        [(ngModel)]="dataService.city"
-        autocomplete="on"
-        type="text" 
-        id="find_location" 
-        placeholder="Search location...">
-    <button (click)="search()" class="btn btn__search" type="submit">Search</button>    
-    
-    <div routerLink='/post' 
+        <label for="find_location">Find Location</label>
+        <input 
+            formControlName="search"
+            [(ngModel)]="dataService.city"
+            autocomplete="on"
+            type="text" 
+            id="find_location" 
+            placeholder="Search location...">
+        <button (click)="search()" class="btn btn__search" type="submit">Search</button>    
+        
+    <div #cityCard
+        routerLink='/post' 
         *ngIf="dataService.response" 
         class="current__serach">
         <div class="search__wrapper">
@@ -87,6 +85,8 @@
           <img src="{{imgUrl + dataService.response.weather[0].icon + '.png'}}" alt="">
         </div>
     </div>
+
+    <button disabled  *ngIf="dataService.response"  class="btn add__post">Add+ ( {{dataService.response.name}})</button>
 </form>
 
 <!-- </div> -->
@@ -95,14 +95,12 @@
     <h2 class="cities_title">
         Cities
     </h2>
-  
+
     <app-post-weather></app-post-weather>
     <app-post-weather></app-post-weather>
-    
-  
- 
+
 </div> -->
 
 
-
+<app-addcity></app-addcity>
 

@@ -83,7 +83,7 @@
 .btn__search {
     border-radius: 50%;
     width: 100px;
-    margin: 0 auto;
+    margin: 15px auto;
     height: 100px;
     
 }
@@ -110,6 +110,13 @@
     padding: 5px;
     border-radius: 10px;
     box-shadow: 0px 4px 12px 8px rgb(34 60 80 / 20%);
+
+
+    @media  (min-width: 320px) and (max-width: 500px){
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
 }
 
 

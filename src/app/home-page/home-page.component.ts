@@ -11,6 +11,8 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class HomePageComponent implements OnInit {
 
+
+
   form!: FormGroup;
 
   imgUrl = 'http://openweathermap.org/img/w/'
@@ -38,11 +40,17 @@ export class HomePageComponent implements OnInit {
   search(){
       this.dataService.searchWeather();
       // localStorage.setItem("cityZ", this.form.value);
-      console.log(this.form.value)
+      // console.log(this.form.value)
       // console.log(this.form.get('search'))
       this.form.reset();
   }  
 
+
+  addCity(){
+    if(this.dataService.response){
+      
+    }
+  }
 
   
 }
