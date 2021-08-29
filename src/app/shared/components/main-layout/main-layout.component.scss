@@ -1,0 +1,26 @@
+.header-main {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    border-bottom: 1px solid;
+    padding: 0.7rem 2rem;
+    background-color: skyblue;
+}
+
+.header-title{
+    font-size: 30px;
+}
+
+
+.footer{
+    margin-top: auto;
+    background-color: grey;
+    height: 50px;
+}
+
+.page{
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}

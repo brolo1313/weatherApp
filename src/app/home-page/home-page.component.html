@@ -1,0 +1,50 @@
+<!-- <div class="wrapper_search"> -->
+<form [formGroup]="form"  class="wrapper_search">
+    <label for="find_location">Find Location</label>
+    <input 
+        formControlName="search"
+        [(ngModel)]="dataService.city"
+        autocomplete="on"
+        type="text" 
+        id="find_location" 
+        placeholder="Search location...">
+    <button (click)="search()" class="btn btn__search" type="submit">Search</button>    
+    
+    <div routerLink='/post' 
+        *ngIf="dataService.response" 
+        class="current__serach">
+        <div class="search__wrapper">
+            <h3 class="search__city">City : {{dataService.response.name}}</h3>
+          
+            <p class="search__country" id="contry">Country : {{dataService.response.sys.country}}</p>
+            
+            
+        </div>
+        
+        <div class="search__temp">
+            {{dataService.response.main.temp}} &#8451;
+        </div>
+
+        <div class="search__wild">
+            {{dataService.response.clouds.all}}
+        </div>
+    </div>
+</form>
+
+<!-- </div> -->
+
+<!-- <div class="wrapper_cities">
+    <h2 class="cities_title">
+        Cities
+    </h2>
+  
+    <app-post-weather></app-post-weather>
+    <app-post-weather></app-post-weather>
+    
+  
+ 
+</div> -->
+
+
+
+
